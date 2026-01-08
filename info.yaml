@@ -9,7 +9,7 @@ project:
 
   tiles: "1x1"
 
-  top_module:  "tt_um_bcd_counter.v"
+  top_module:  "src/tt_um_bcd_counter.v"
 
   source_files:
     - "project.v"
