@@ -9,22 +9,30 @@ module tt_um_bcd_counter (
 
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
-            bcd_units    <= 0;
-            bcd_tens     <= 0;
-            bcd_hundreds <= 0;
+            bcd_units    <= 4'd0;
+            bcd_tens     <= 4'd0;
+            bcd_hundreds <= 4'd0;
         end else if (enable) begin
-            if (bcd_units == 9) begin
-                bcd_units <= 0;
-                if (bcd_tens == 9) begin
-                    bcd_tens <= 0;
-                    if (bcd_hundreds == 9)
-                        bcd_hundreds <= 0;
-                    else
+            // Contador de unidades
+            if (bcd_units == 4'd9) begin
+                bcd_units <= 4'd0;
+                // Contador de decenas
+                if (bcd_tens == 4'd9) begin
+                    bcd_tens <= 4'd0;
+                    // Contador de centenas
+                    if (bcd_hundreds == 4'd9) begin
+                        bcd_hundreds <= 4'd0;
+                    end else begin
                         bcd_hundreds <= bcd_hundreds + 1;
-                end else
+                    end
+                end else begin
                     bcd_tens <= bcd_tens + 1;
-            end else
+                end
+            end else begin
                 bcd_units <= bcd_units + 1;
+            end
         end
     end
+
 endmodule
+
