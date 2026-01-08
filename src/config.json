@@ -7,7 +7,6 @@ module project (
     output wire [7:0]  uio_out,
     output wire [7:0]  uio_oe
 );
-
     // -------------------------
     // Entrada enable desde UI
     // -------------------------
