@@ -1,30 +1,24 @@
 # Tiny Tapeout project information
 project:
-  title:        "Contador BCD de 8 Bits"      # Project title
-  author:       "CPUN & GGAJ & AGE"      # Your name
-  discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  "Contador BCD de 8 bits"      # One line description of what your project does
-  language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
-  clock_hz:     10000000       # Clock frequency in Hz (or 0 if not applicable)
+  title:        "Contador BCD de 3 Dígitos"
+  author:       "Corona Pérez Ulises Nicolás, Altamirano Galindo Eriol, Gonzáles García Aldo Yahir"
+  discord:      ""
+  description:  "Contador decimal en formato BCD de tres dígitos implementado en Verilog para Tiny Tapeout"
+  language:     "Verilog"
+  clock_hz:     10000000
 
-  # How many tiles your design occupies? A single tile is about 167x108 uM.
-  tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+  tiles: "1x1"
 
-  # Your top module name must start with "tt_um_". Make it unique by including your github username:
   top_module:  "tt_um_bcd_counter"
 
-  # List your project's source files here.
-  # Source files must be in ./src and you must list each source file separately, one per line.
-  # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
   source_files:
-    - "project.v
-    - "tt_um_bcd_counter"
+    - "project.v"
+    - "tt_um_bcd_counter.v"
 
-# The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
-# This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
+# Pinout documentation
 pinout:
   # Inputs
-  ui[0]: ""
+  ui[0]: "enable"
   ui[1]: ""
   ui[2]: ""
   ui[3]: ""
@@ -34,16 +28,16 @@ pinout:
   ui[7]: ""
 
   # Outputs
-  uo[0]: ""
-  uo[1]: ""
-  uo[2]: ""
-  uo[3]: ""
-  uo[4]: ""
-  uo[5]: ""
-  uo[6]: ""
-  uo[7]: ""
+  uo[0]: "bcd_units[0]"
+  uo[1]: "bcd_units[1]"
+  uo[2]: "bcd_units[2]"
+  uo[3]: "bcd_units[3]"
+  uo[4]: "bcd_tens[0]"
+  uo[5]: "bcd_tens[1]"
+  uo[6]: "bcd_tens[2]"
+  uo[7]: "bcd_tens[3]"
 
-  # Bidirectional pins
+  # Bidirectional pins (no usados)
   uio[0]: ""
   uio[1]: ""
   uio[2]: ""
@@ -55,3 +49,4 @@ pinout:
 
 # Do not change!
 yaml_version: 6
+
