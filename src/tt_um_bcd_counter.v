@@ -1,9 +1,3 @@
-// ------------------------------------------------------------
-// Tiny Tapeout - Contador BCD de 3 dígitos
-// Autor: CPUN & GGAJ & AGE
-// Descripción: Contador BCD con enable (ena) requerido por TT
-// ------------------------------------------------------------
-
 module tt_um_bcd_counter (
     input  wire        clk,        // Clock
     input  wire        rst_n,          // Reset activo en bajo
@@ -66,6 +60,7 @@ module tt_um_bcd_counter (
     wire _unused = &{ui_in, uio_in, bcd_hundreds, 1'b0};
 
 endmodule
+
 
 
 
