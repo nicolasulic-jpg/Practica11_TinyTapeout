@@ -1,7 +1,7 @@
 module tt_um_bcd_counter (
     input  wire clk,
     input  wire rst_n,
-    input  wire enable,
+    input  wire ena,        // enable 
     output reg [3:0] bcd_units,
     output reg [3:0] bcd_tens,
     output reg [3:0] bcd_hundreds
@@ -12,7 +12,7 @@ module tt_um_bcd_counter (
             bcd_units    <= 4'd0;
             bcd_tens     <= 4'd0;
             bcd_hundreds <= 4'd0;
-        end else if (enable) begin
+        end else if (ena) begin        //enable
             // Contador de unidades
             if (bcd_units == 4'd9) begin
                 bcd_units <= 4'd0;
@@ -35,4 +35,5 @@ module tt_um_bcd_counter (
     end
 
 endmodule
+
 
